@@ -34,7 +34,7 @@ const exerciseOne = () => {
     // Instructions:
     // • Inspect the error, then fix it.
   
-    let isMark: boolean;
+    let isMark: boolean=true;
   
     console.log('[Exercise 1.3]', `${isMark ? 'Oh, hi Mark' : 'Who are you?'}`);
   
@@ -45,15 +45,15 @@ const exerciseOne = () => {
   
     const integer= 6;
     const float = 6.66;
-    const hex = 0xf00d;
-    const binary = 0b1010011010;
-    const octal = 0o744;
+    const hex = '0xf00d';
+    const binary = '0b1010011010';
+    const octal = '0o744';
     const negZero = -0;
     const actuallyNumber = NaN;
     const largestNumber = Number.MAX_VALUE;
     const mostBiglyNumber = Infinity;
   
-    const members: any[] = [
+    const members: [integer: number, float:number, hex:string, binary:string, octal:string, negZero:number, actuallyNumber:any, largestNumber:number, mostBiglyNumber:any  ] = [
       integer,
       float,
       hex,
