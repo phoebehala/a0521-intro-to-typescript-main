@@ -42,18 +42,39 @@ const exerciseOne = () => {
     // Instructions:
     // • Add type annotations (as explicit as possible)
     // • Fix errors (if applicable)
-  
+  /*
+    const integer: number= 6;
+    const float: number = 6.66;
+    const hex: number = 0xf00d;
+    const binary: number = 0b1010011010;
+    const octal: number= 0o744;
+    const negZero : number= -0;
+    const actuallyNumber: number = NaN;
+    const largestNumber: number = Number.MAX_VALUE;
+    const mostBiglyNumber: number = Infinity;
+  */
     const integer= 6;
     const float = 6.66;
-    const hex = '0xf00d';
-    const binary = '0b1010011010';
-    const octal = '0o744';
-    const negZero = -0;
+    const hex = 0xf00d;
+    const binary = 0b1010011010;
+    const octal= 0o744;
+    const negZero= -0;
     const actuallyNumber = NaN;
-    const largestNumber = Number.MAX_VALUE;
-    const mostBiglyNumber = Infinity;
-  
-    const members: [integer: number, float:number, hex:string, binary:string, octal:string, negZero:number, actuallyNumber:any, largestNumber:number, mostBiglyNumber:any  ] = [
+    const largestNumber= Number.MAX_VALUE;
+    const mostBiglyNumber= Infinity;
+    
+    // const members: [integer: number, float:number, hex:string, binary:string, octal:string, negZero:number, actuallyNumber:any, largestNumber:number, mostBiglyNumber:any  ] = [
+    //   integer,
+    //   float,
+    //   hex,
+    //   binary,
+    //   octal,
+    //   negZero,
+    //   actuallyNumber,
+    //   largestNumber,
+    //   mostBiglyNumber
+    // ];
+    const members:number[] = [
       integer,
       float,
       hex,
@@ -74,10 +95,15 @@ const exerciseOne = () => {
     // • Add type annotations (as explicit as possible)
     // • Fix errors (if applicable)
   
-    const sequence = Array.from(Array(10).keys());
-    const animals = ['pangolin', 'aardvark', 'echidna', 'binturong'];
-    const stringsAndNumbers = [1, 'one', 2, 'two', 3, 'three'];
-    const allMyArrays = [sequence, animals, stringsAndNumbers];
+    const sequence:number[] = Array.from(Array(10).keys());
+    //const animals:Array<string> = ['pangolin', 'aardvark', 'echidna', 'binturong'];
+    const animals:string[] = ['pangolin', 'aardvark', 'echidna', 'binturong'];
+    const stringsAndNumbers:(string|number)[] = [1, 'one', 2, 'two', 3, 'three'];
+    
+    // (number|string) >>> union type
+    // [][] >>> 2D array    for example, [1][0] indicates 'pangolin'
+    // Array<number|string>
+    const allMyArrays: (number|string)[][] = [sequence, animals, stringsAndNumbers];
   
     console.log('Exercise 1.5', allMyArrays);
   
@@ -89,7 +115,9 @@ const exerciseOne = () => {
     // We want to represent an inventoryItem as a structure where
     // the first entry is the item name and the second is the quantity
   
-    const inventoryItem = ['fidget wibbit', 11];
+    // implicit type /  annotation
+    const inventoryItem1 = ['fidget wibbit', 11];
+    const inventoryItem: [string, number] = ['fidget wibbit', 11];
   
     // later we destructure it
     const [name, qty] = inventoryItem;
